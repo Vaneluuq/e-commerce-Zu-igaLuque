@@ -1,0 +1,13 @@
+.itemNav {
+    cursor: pointer;
+}
+
+.itemNav:hover {
+    color: #99DDCC;
+    font-size: 1.5rem;
+}
+
+.headerStyle {
+    color: #000D6B;
+    background: #FF5DA2;
+}
