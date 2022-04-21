@@ -3,11 +3,26 @@
 }
 
 .itemNav:hover {
-    color: #99DDCC;
-    font-size: 1.5rem;
+    color: #16697A;
+    font-size: 1.75rem;
 }
 
 .headerStyle {
-    color: #000D6B;
-    background: #FF5DA2;
+    color: #F8F1F1;
+    background: #DB6400;
+    margin-top: 20px;
+}
+
+.position {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    pointer-events: none;
+}
+
+.positionShopping{
+    z-index: 1;
+    top: 40px;
+    right: 47px;
 }
