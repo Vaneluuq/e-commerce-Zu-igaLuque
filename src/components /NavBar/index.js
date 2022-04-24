@@ -13,9 +13,9 @@ const NavBar = () => {
                 </a>
                 <nav className={cx("md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-around", "headerStyle")}>
                     <a className={cx("py-4 px-0 text-2xl", "itemNav")}>Inicio</a>
-                    <a className={cx("py-4 px-0 text-2xl", "itemNav")}>Tortas</a>
-                    <a className={cx("py-4 px-0 text-2xl", "itemNav")}>Postres</a>
-                    <a className={cx("py-4 px-0 text-2xl", "itemNav")}>Combos</a>
+                    <a className={cx("py-4 px-0 text-2xl", "itemNav")}>Ropa</a>
+                    <a className={cx("py-4 px-0 text-2xl", "itemNav")}>Joyeria</a>
+                    <a className={cx("py-4 px-0 text-2xl", "itemNav")}>Otros</a>
                 </nav>
                 <div className={cx("flex justify-center absolute", "positionShopping")}>
                     <CardWidget />

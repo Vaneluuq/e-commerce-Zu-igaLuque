@@ -3,13 +3,13 @@
 }
 
 .itemNav:hover {
-    color: #16697A;
-    font-size: 1.75rem;
+    color: #F05454;
+    font-size: 1.65rem;
 }
 
 .headerStyle {
-    color: #F8F1F1;
-    background: #DB6400;
+    color: #DDDDDD;
+    background: #222831;
     margin-top: 20px;
 }
 

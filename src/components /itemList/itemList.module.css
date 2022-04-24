@@ -1,0 +1,29 @@
+.card {
+    width: 15em;
+    height: 20em;
+}
+
+.aditionalStyle {
+    font-size: 1rem;
+    color: #000;
+    letter-spacing: 2px;
+    line-height: 1.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #DDDDDD;
+    background: #30475E;
+}
+
+.price {
+    background: #F05454;
+    color: white;
+}
+
+.imagenHover:hover {
+    width: 9.2rem;
+    
+}
