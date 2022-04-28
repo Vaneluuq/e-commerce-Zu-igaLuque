@@ -4,6 +4,7 @@
 
 - Contiene navBar con opciones clickables 
 - Icono carrito de compras
+- Cards con productos 
 
 ### Estructura archivos del proyecto
 
@@ -21,4 +22,8 @@
 |--|--|--|--index.js
 |--|--|--|--ItemListContainer.module.css
 ```
+
+### Data 
+
+Se hizo mock estatico apartir del api https://fakestoreapi.com/ donde se retornan el id, titulo - descripción, precio e imagen 
 
