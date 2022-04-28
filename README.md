@@ -12,18 +12,24 @@
 |--src/
 |--|--assets/
 |--|--components/
-|--|--|--cardWidget/
+|--|--|--cardWidget/              -> Contenedor del icono de carrito de compras
 |--|--|--|--index.js
 |--|--|--|--cardWidget.module.css
-|--|--|--NavBar.jsx
+|--|--|--NavBar/                  -> NavBar de la aplicación
 |--|--|--|--index.js
 |--|--|--|--NavBar.module.css
-|--|--|--ItemListContainer.jsx
+|--|--|--ItemListContainer/       -> Contenedor de itemList
 |--|--|--|--index.js
-|--|--|--|--ItemListContainer.module.css
+|--|--|--ItemList/                -> Agrupador de un set de componentes Item.js 
+|--|--|--|--index.js
+|--|--|--|--ItemList.module.css
+|--|--|--Item/                    -> Componente que muestra información breve del producto
+|--|--|--|--index.js
+|--|--|--|--Item.module.css
 ```
+
 
 ### Data 
 
-Se hizo mock estatico apartir del api https://fakestoreapi.com/ donde se retornan el id, titulo - descripción, precio e imagen 
+La data utilizada para mostrar los items de la tienda se realizaron apartir de un mock estatico, data tomada de https://fakestoreapi.com/, donde se retornan el id, titulo - descripción, precio e imagen por cada item. 
 
