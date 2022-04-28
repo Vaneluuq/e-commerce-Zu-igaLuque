@@ -13,7 +13,7 @@ export const data = [
     },
     {
         "id": 2,
-        "title": "Mens Casual Premium Slim Fit T-Shirts ",
+        "title": "Mens Casual Premium Slim",
         "price": 22.3,
         "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
         "category": "men's clothing",
@@ -49,7 +49,7 @@ export const data = [
     },
     {
         "id": 5,
-        "title": "Silver Dragon Station Chain Bracelet",
+        "title": "Silver Dragon Chain Bracelet",
         "price": 695,
         "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
         "category": "jewelery",
@@ -85,7 +85,7 @@ export const data = [
     },
     {
         "id": 8,
-        "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+        "title": "Pierced Owl Rose Gold Plated Steel Double",
         "price": 10.99,
         "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
         "category": "jewelery",
@@ -145,7 +145,7 @@ export const data = [
     },
     {
         "id": 13,
-        "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+        "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080)",
         "price": 599,
         "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
         "category": "electronics",
@@ -157,7 +157,7 @@ export const data = [
     },
     {
         "id": 14,
-        "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA)",
+        "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor",
         "price": 999.99,
         "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
         "category": "electronics",
@@ -181,7 +181,7 @@ export const data = [
     },
     {
         "id": 16,
-        "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+        "title": "Hooded Faux Leather Moto Biker Jacket",
         "price": 29.95,
         "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
         "category": "women's clothing",
@@ -193,7 +193,7 @@ export const data = [
     },
     {
         "id": 17,
-        "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+        "title": "Rain Jacket Women Windbreaker",
         "price": 39.99,
         "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
         "category": "women's clothing",
