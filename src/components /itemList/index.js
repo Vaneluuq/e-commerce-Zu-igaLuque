@@ -20,7 +20,7 @@ const ItemList = ({ data }) => {
                 </div>
                 <div className={cx("h-1/4 overflow-hidden border-t-2 py-1")}>
                     <span className={cx("h-11", "aditionalStyle")} >{data.title}</span>
-                    <span className={cx("aditionalStyle", "cursor-pointer hover:text-amber-600")} >Ver mas</span>
+                    <h1 className={cx("aditionalStyle", "cursor-pointer hover:text-amber-600 hover:underline")}>Ver mas</h1>
                 </div>
             </div>
         </>
