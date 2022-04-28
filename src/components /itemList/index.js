@@ -1,29 +1,44 @@
-import React from 'react';
-import classNames from "classnames/bind";
-import itemListStyles from "./itemList.module.css";
-const cx = classNames.bind(itemListStyles);
+import React, { useState, useEffect } from 'react';
+import Item from '../item';
+import { data } from "../mockdata"
 
-const ItemList = ({ data }) => {
+const ItemList = () => {
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [alert, setAlert] = useState(false)
+
+    useEffect(() => {
+        const promise = new Promise((resolve) => {
+            setTimeout(() => {
+                setLoading(true)
+                resolve(data);
+            }, 2000);
+        });
+        promise.then((value) => {
+            setLoading(false)
+            setProducts(value);
+        }).catch(() => {
+            setAlert(true)
+        })
+    }, [])
+
     return (
         <>
-            <div className={cx("m-3", "card")} >
-                <div className={cx("imagenHover", "relative h-3/4 flex justify-center items-center overflow-hidden")} >
-                    <div className={cx("absolute top-2 right-0 p-1", "price")} >{`$ ${data.price}`}</div>
-                    <div className={cx("divImg")} >
-                        <img className={cx("w-32")} src={data.image}></img>
-                    </div>
-                    <div className={cx("absolute", "color")} >
-                        <div className={cx("flex justify-center items-center w-full h-full")} >
-                            <button className={cx("px-6 py-2 rounded-md text-white", "buttonAdd")} >Agregar al carrito</button>
-                        </div>
-                    </div>
+            {loading ?
+                <div style={{ height: "100vh" }} className='flex justify-center items-center text-2xl text-amber-600' > Loading... </div>
+                :
+                <div className="flex flex-wrap justify-center mt-10">
+                    {products?.map(item => (
+                        <Item key={item.id} data={item} />
+
+                    ))}
                 </div>
-                <div className={cx("h-1/4 overflow-hidden border-t-2 py-1")}>
-                    <span className={cx("h-11", "aditionalStyle")} >{data.title}</span>
-                    <h1 className={cx("aditionalStyle", "cursor-pointer hover:text-amber-600 hover:underline")}>Ver mas</h1>
-                </div>
-            </div>
+            }
+            {
+                alert && <div>Upps! Ha ocurrido un error, recarga la pagina nuevamente</div>
+            }
         </>
+
     )
 }
 
