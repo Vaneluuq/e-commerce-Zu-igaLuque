@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from "classnames/bind";
 import itemListStyles from "./item.module.css";
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(itemListStyles);
 
 const Item = ({ data}) => {
@@ -20,7 +21,7 @@ const Item = ({ data}) => {
                 </div>
                 <div className={cx("h-1/4 overflow-hidden border-t-2 py-1")}>
                     <span className={cx("h-11", "aditionalStyle")} >{data.title}</span>
-                    <h1 className={cx("aditionalStyle", "cursor-pointer hover:text-amber-600 hover:underline")}>Ver mas</h1>
+                    <Link to={`/${data.id}`} className={cx("aditionalStyle", "cursor-pointer hover:text-amber-600 hover:underline")}>Ver mas</Link>
                 </div>
             </div>
         </>

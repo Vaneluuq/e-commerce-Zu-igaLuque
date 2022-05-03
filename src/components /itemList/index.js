@@ -7,14 +7,17 @@ const ItemList = () => {
     const [loading, setLoading] = useState(true)
     const [alert, setAlert] = useState(false)
 
-    useEffect(() => {
-        const promise = new Promise((resolve) => {
+    const getProducts = () => {
+        return new Promise((resolve) => {
             setTimeout(() => {
                 setLoading(true)
                 resolve(data);
             }, 2000);
         });
-        promise.then((value) => {
+    }
+
+    useEffect(() => {
+        getProducts().then((value) => {
             setLoading(false)
             setProducts(value);
         }).catch(() => {

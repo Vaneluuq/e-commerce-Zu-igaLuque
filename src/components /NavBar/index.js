@@ -10,7 +10,7 @@ const ListNav = () => {
     return (
         <>
             <li className={cx("border-b border-gray-400 my-8 uppercase", "itemNav")}>
-                <a href="/home">Inicio</a>
+                <a href="/">Inicio</a>
             </li>
             <li className={cx("border-b border-gray-400 my-8 uppercase", "itemNav")}>
                 <a href="/clothes">Ropa</a>
@@ -48,7 +48,7 @@ const NavBar = () => {
                     <span onClick={() => setIsNavOpen((prev) => !prev)} className={cx("cursor-pointer")} ><Icon icon="menu" width="30" height="30" /></span>
                 </div>
                 <div className={cx(isNavOpen ? "showMenuNav" : "hideMenuNav")}>
-                    <span className={cx("cursor-pointer")} onClick={() => setIsNavOpen(false)} >  <Icon icon="menu" width="25" height="25" /> </span>
+                    <span className={cx("cursor-pointer")} onClick={() => setIsNavOpen(false)} >  <Icon icon="x" width="25" height="25" /> </span>
                     <ul className="flex flex-col items-center justify-between">
                         <ListNav />
                     </ul>
