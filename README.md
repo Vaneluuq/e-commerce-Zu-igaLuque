@@ -33,3 +33,11 @@
 
 La data utilizada para mostrar los items de la tienda se realizaron apartir de un mock estatico, data tomada de https://fakestoreapi.com/, donde se retornan el id, titulo - descripción, precio e imagen por cada item. 
 
+### Routing 
+
+Se agrega ruteo mediante el paquete de react-router-dom donde se le permite al usuario navegar a 3 rutas principales: 
+
+- Ruta al home : ``` "/" ```
+- Ruta que pemite ver los productos existentes por cada categoria: ``` "/category/id" ```
+- Ruta que permite ver el detalle de cada producto: ``` "/item/id" ```
+
