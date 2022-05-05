@@ -8,9 +8,9 @@ const ItemDetail = ({ product }) => {
     const [counter, setCounter] = useState(1)
 
     const stylePayment = () => {
-        if (product?.category === "men's clothing") {
+        if (product?.category === "clothes") {
             return "containerPaymentMen"
-        } else if (product?.category === "women's clothing") {
+        } else if (product?.category === "jewelery") {
             return "containerPaymentWomen"
         } else {
             return "containerPaymentOthers"
@@ -18,7 +18,7 @@ const ItemDetail = ({ product }) => {
     }
 
     return (
-        <div className="flex py-10 px-20 h-screen" >
+        <div className="flex flex-wrap py-10 px-20 h-screen" >
             <div className={cx("w-6/12 flex flex-col", "containerImagen")} >
                 <div className={cx("flex justify-center items-center", "heightStyle")}>
                     <div>
@@ -31,11 +31,11 @@ const ItemDetail = ({ product }) => {
                 </div>
             </div>
             <div className={cx("w-6/12 flex flex-col pt-20", stylePayment())} >
-                <h3 className="text-base" >DulceTarde clothes</h3>
-                <h2 className="text-lg pb-5" >{product?.title} </h2>
+                <h3 className="text-base font-medium text-orange-600" >DulceTarde clothes</h3>
+                <h2 className="text-lg pb-5 font-semibold" >{product?.title} </h2>
                 <span className="text-lg pb-5" >{`$${product?.price}`}</span>
                 <div className="text-base pb-10" >
-                    {(product?.category === "men's clothing" || product?.category === "women's clothing") ?
+                    {product?.category === "clothes" ?
                         <select className="w-52 h-10 text-center" name="select">
                             <option hidden selected>Selecciona una talla</option>
                             <option value="value1">XS</option>
@@ -48,11 +48,11 @@ const ItemDetail = ({ product }) => {
                     }
                 </div>
                 <div className="pb-20" >
-                    <div className="pb-2" >Cuantas Prendas quieres</div>
+                    <div className="pb-2" >{product?.category === "clothes" ? "Cuantas Prendas quieres" : "Escoge el numero de unidades"}</div>
                     <div className="flex justify-center" >
-                        <button className="border-2 border-current w-10" onClick={() => setCounter(counter - 1)} > - </button>
+                        <button className="border-2 border-current w-10 rounded-md" onClick={() => setCounter(counter - 1)} > - </button>
                         <div className="w-10">{counter} </div>
-                        <button className="border-2 border-current w-10" onClick={() => setCounter(counter + 1)} > + </button>
+                        <button className="border-2 border-current w-10 rounded-md" onClick={() => setCounter(counter + 1)} > + </button>
 
                     </div>
 
@@ -78,13 +78,12 @@ const ItemDetail = ({ product }) => {
                     <button className={cx("border-2 border-current h-10 w-52 rounded-md", "hoveredAction")} >
                         <div className={cx("flex items-center justify-around")}>
                             <span>Agregar a favoritos</span>
-                            <Icon icon="heart" width="20" height="20" />
+                            <Icon icon="heart" width="20" height="20" className={cx("iconStyle")} />
                         </div>
                     </button>
                 </div>
 
             </div>
-
         </div>
     );
 }

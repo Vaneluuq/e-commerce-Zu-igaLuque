@@ -29,3 +29,8 @@
     background: #dddddd29;
     color: #1A132F;
 }
+
+.hoveredAction:hover {
+    border: 2px solid rgb(239, 138, 61);
+    font-weight: 700;
+}

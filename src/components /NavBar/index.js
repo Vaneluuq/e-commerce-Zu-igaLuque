@@ -13,13 +13,13 @@ const ListNav = () => {
                 <a href="/">Inicio</a>
             </li>
             <li className={cx("border-b border-gray-400 my-8 uppercase", "itemNav")}>
-                <a href="/clothes">Ropa</a>
+                <a href="/category/clothes">Ropa</a>
             </li>
             <li className={cx("border-b border-gray-400 my-8 uppercase", "itemNav")}>
-                <a href="/jewelry">Joyeria</a>
+                <a href="/category/jewelery">Joyeria</a>
             </li>
             <li className={cx("border-b border-gray-400 my-8 uppercase", "itemNav")}>
-                <a href="/others">Otros</a>
+                <a href="/category/others">Otros</a>
             </li>
         </>
     )

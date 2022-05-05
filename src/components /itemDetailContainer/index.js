@@ -8,6 +8,7 @@ const ItemDetailContainer = () => {
     const { productId } = useParams()
     const [product, setProduct] = useState()
     const [loading, setLoading] = useState(true)
+    const [alert, setAlert] = useState(false)
 
     useEffect(() => {
         (
@@ -16,6 +17,9 @@ const ItemDetailContainer = () => {
                 if (getProduct) {
                     setLoading(false)
                     setProduct(getProduct)
+                } else {
+                    setLoading(false)
+                    setAlert(true)
                 }
             }
         )()
@@ -31,7 +35,9 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {loading ? "Loading..." : <ItemDetail product={product} /> }
+            {loading ? <div style={{ height: "100vh" }} className='flex justify-center items-center text-2xl text-amber-600'>"Loading..."</div>
+                : [alert ? <div style={{ height: "100vh" }} className='flex justify-center items-center text-2xl text-amber-600' >Upps! Ha ocurrido un error, recarga la pagina nuevamente.</div>
+                    : <ItemDetail product={product} />]}
         </>
     );
 }
