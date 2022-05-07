@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Item from '../item';
-import { data } from "../mockdata"
 
 const ItemList = ({ productsCategory }) => {
 

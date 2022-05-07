@@ -22,7 +22,7 @@ const ItemDetail = ({ product }) => {
             <div className={cx("w-6/12 flex flex-col", "containerImagen")} >
                 <div className={cx("flex justify-center items-center", "heightStyle")}>
                     <div>
-                        <img className={cx("w-40", "zoom")} src={product?.image}></img>
+                        <img alt="productImage" className={cx("w-40", "zoom")} src={product?.image}></img>
                     </div>
                 </div>
                 <div className=" flex flex-col justify-center items-center px-20" >

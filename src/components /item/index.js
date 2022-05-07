@@ -21,7 +21,7 @@ const Item = ({ data }) => {
                 <div className={cx("imagenHover", "relative h-3/4 flex justify-center items-center overflow-hidden")} >
                     <div className={cx("absolute top-2 right-0 p-1", "price")} >{`$ ${data.price}`}</div>
                     <div className={cx("divImg")} >
-                        <img className={cx("w-32")} src={data.image}></img>
+                        <img alt='productImage' className={cx("w-32")} src={data.image}></img>
                     </div>
                     <div className={cx("absolute", "color")} >
                         <div className={cx("flex justify-center items-center w-full h-full")} >

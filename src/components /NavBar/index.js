@@ -30,8 +30,8 @@ const NavBar = () => {
     return (
         <>
             <header className={cx("text-gray-600 body-font hidden lg:flex")}>
-                <a className={cx("flex justify-center absolute", "position")}>
-                    <img src={logo} style={{ width: "100px" }} ></img>
+                <a href='/' className={cx("flex justify-center absolute", "position")}>
+                    <img alt='logo' src={logo} style={{ width: "100px" }} ></img>
                 </a>
                 <nav className={cx("md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-around", "headerStyle")}>
                     <ul className="flex flex-wrap justify-around w-full">
