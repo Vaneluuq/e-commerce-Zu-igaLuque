@@ -1,0 +1,17 @@
+.color {
+    color: white;
+}
+
+.counter {
+    border-radius: 100%;
+    position: absolute;
+    top: -7px;
+    left: 20px;
+    z-index: 5;
+    background-color: tomato;
+    color: white;
+    width: 20px;
+    height: 20px;
+    line-height: 19px;
+
+}

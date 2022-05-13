@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classNames from "classnames/bind";
 import itemDetails from "./itemDetails.module.css";
 import Icon from "feather-icons-react";
+import { Link } from "react-router-dom";
+import { CardContext } from "../cartContext";
 const cx = classNames.bind(itemDetails);
 
 const ItemDetail = ({ product }) => {
+    const { addItem } = useContext(CardContext)
     const [counter, setCounter] = useState(1)
 
     const stylePayment = () => {
@@ -15,6 +18,17 @@ const ItemDetail = ({ product }) => {
         } else {
             return "containerPaymentOthers"
         }
+    }
+
+    const [goToPay, setGoToPay] = useState(false)
+
+    const addToShopping = (item) => {
+        const data = {
+            item: item,
+            quantity: counter
+        }
+        addItem(data)
+        setGoToPay(true)
     }
 
     return (
@@ -37,7 +51,7 @@ const ItemDetail = ({ product }) => {
                 <div className="text-base pb-10" >
                     {product?.category === "clothes" ?
                         <select className="w-52 h-10 text-center" name="select">
-                            <option hidden selected>Selecciona una talla</option>
+                            <option hidden defaultValue>Selecciona una talla</option>
                             <option value="value1">XS</option>
                             <option value="value2">S</option>
                             <option value="value3">M</option>
@@ -57,32 +71,25 @@ const ItemDetail = ({ product }) => {
                     </div>
 
                 </div>
-                <div>
-                    <button className={cx("border-2 border-current h-10 w-52 mb-2 rounded-md", "hoveredAction")} >
-                        <div className={cx("flex items-center justify-around")} >
-                            <span>Agregar al carrito</span>
-                            <Icon icon="shopping-cart" width="20" height="20" />
+                {
+                    goToPay ?
+                        <Link to={"/cart"}>
+                            <button className={cx("border-2 border-current h-10 w-52 mb-2 rounded-md", "hoveredAction")} >
+                                <div className={cx("flex items-center justify-around")}>
+                                    <span>Terminar mi compra</span>
+                                    <Icon icon="credit-card" width="20" height="20" />
+                                </div>
+                            </button>
+                        </Link> :
+                        <div>
+                            <button className={cx("border-2 border-current h-10 w-52 mb-2 rounded-md", "hoveredAction")} >
+                                <div className={cx("flex items-center justify-around")} >
+                                    <span onClick={() => addToShopping(product)}>Agregar al carrito</span>
+                                    <Icon icon="shopping-cart" width="20" height="20" />
+                                </div>
+                            </button>
                         </div>
-
-                    </button>
-                </div>
-                <div>
-                    <button className={cx("border-2 border-current h-10 w-52 mb-2 rounded-md", "hoveredAction")} >
-                        <div className={cx("flex items-center justify-around")}>
-                            <span>ir a comprar</span>
-                            <Icon icon="credit-card" width="20" height="20" />
-                        </div>
-                    </button>
-                </div>
-                <div>
-                    <button className={cx("border-2 border-current h-10 w-52 rounded-md", "hoveredAction")} >
-                        <div className={cx("flex items-center justify-around")}>
-                            <span>Agregar a favoritos</span>
-                            <Icon icon="heart" width="20" height="20" className={cx("iconStyle")} />
-                        </div>
-                    </button>
-                </div>
-
+                }
             </div>
         </div>
     );

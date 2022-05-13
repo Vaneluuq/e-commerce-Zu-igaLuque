@@ -36,9 +36,17 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {loading ? <div style={{ height: "100vh" }} className='flex justify-center items-center text-2xl text-amber-600'>"Loading..."</div>
-                : [alert ? <div style={{ height: "100vh" }} className='flex justify-center items-center text-2xl text-amber-600' >Upps! Ha ocurrido un error, recarga la pagina nuevamente.</div>
-                    : <ItemDetail product={product} />]}
+            {loading ?
+                <div
+                    style={{ height: "100vh" }}
+                    className='flex justify-center items-center text-2xl text-amber-600'>"Loading..."
+                </div>
+                : alert ?
+                    <div
+                        style={{ height: "100vh" }}
+                        className='flex justify-center items-center text-2xl text-amber-600' >Upps! Ha ocurrido un error, recarga la pagina nuevamente.
+                    </div>
+                    : <ItemDetail product={product} />}
         </>
     );
 }

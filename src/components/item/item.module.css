@@ -23,23 +23,32 @@
     color: white;
 }
 
-.imagenHover:hover > .color{
+.imagenHover:hover>.color {
     display: block;
 }
 
-.color{
+.color {
     background-color: #30475e53;
     width: 100%;
     height: 100%;
     display: none;
 }
 
-.buttonAdd{
+.containerCart {
     background: #61a4bcd8;
+    margin-bottom: 10px;
+    width: 80%;
 }
 
-.buttonAdd:hover{
-  width: 200px;
-  height: 50px;
-  font-size: 18px;
+.buttonAdd {
+    background: #bc7261d8;
+    width: 100%;
+}
+
+.buttonAdd:active {
+    background: tomato;
+}
+
+.pressButton:active {
+    background: white;
 }
