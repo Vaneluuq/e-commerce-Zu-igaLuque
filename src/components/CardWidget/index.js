@@ -6,15 +6,14 @@ import { useContext } from "react";
 import { CardContext } from "../cartContext";
 const cx = classNames.bind(cardStyles);
 
-const CardWidget = () => {
+const CardWidget = ({iconStyle}) => {
     const { items } = useContext(CardContext)
     return (
         <PopoverCart>
             <div>
-                <span className={cx("color", "cursor-pointer")} > <Icon icon="shopping-cart" width="25" height="25" /></span>
+                <span style={iconStyle} className={cx("cursor-pointer")} > <Icon icon="shopping-cart" width="25" height="25" /></span>
                 <div className={cx("counter")}>{items?.length}</div>
             </div>
-
         </PopoverCart>
 
     );

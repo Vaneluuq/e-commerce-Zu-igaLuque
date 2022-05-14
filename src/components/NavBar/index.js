@@ -39,13 +39,16 @@ const NavBar = () => {
                     </ul>
                 </nav>
                 <div className={cx("flex justify-center absolute", "positionShopping")}>
-                    <CardWidget />
+                    <CardWidget iconStyle={{ color: "white" }} />
                 </div>
             </header>
             <section className={cx("lg:hidden")} >
-                <div className={cx("flex justify-between items-center px-10 pt-5")} >
+                <div className={cx("flex items-center px-10 pt-5")} >
+                    <span onClick={() => setIsNavOpen((prev) => !prev)} className={cx("cursor-pointer pr-7")} ><Icon icon="menu" width="30" height="30" /></span>
                     <h1 className={cx("text-lg font-black text-orange-500 font-serif")} >DulceTarde Clothes</h1>
-                    <span onClick={() => setIsNavOpen((prev) => !prev)} className={cx("cursor-pointer")} ><Icon icon="menu" width="30" height="30" /></span>
+                    <div className={cx("flex justify-center absolute", "positionShoppingResponsive")}>
+                        <CardWidget />
+                    </div>
                 </div>
                 <div className={cx(isNavOpen ? "showMenuNav" : "hideMenuNav")}>
                     <span className={cx("cursor-pointer")} onClick={() => setIsNavOpen(false)} >  <Icon icon="x" width="25" height="25" /> </span>

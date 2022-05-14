@@ -23,6 +23,11 @@
     right: 47px;
 }
 
+.positionShoppingResponsive {
+    z-index: 1;
+    right: 47px;
+}
+
 .hideMenuNav {
     display: none;
 }
