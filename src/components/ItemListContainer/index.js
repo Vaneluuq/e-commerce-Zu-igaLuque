@@ -1,37 +1,44 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
-import { data } from "../mockdata";
 import ItemList from '../itemList';
 
 const ItemListContainer = () => {
-    const { category } = useParams()
+    const { category = null } = useParams()
     const [productByCategory, setproductByCategory] = useState([])
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        (
-            async () => {
-                const getCategory = await getProductsByCategory()
-                if (getCategory) {
-                    setLoading(false)
-                    if (getCategory.length > 0) {
-                        setproductByCategory(getCategory)
-                    } else {
-                        setproductByCategory(data)
-                    }
-                }
+    const getAllProducts = async () => {
+        const db = getFirestore()
+        const products = collection(db, "items")
+        getDocs(products).then((res) => {
+            setLoading(false)
+            if (res.size > 0) {
+                setproductByCategory(res.docs.map(doc => ({ "id": doc.id, ...doc.data() })))
             }
-        )()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [category])
-
-    const getProductsByCategory = () => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(data.filter(r => r.category == category));
-            }, 2000);
-        });
+        })
     }
+    const getProductsByCategory = () => {
+        const db = getFirestore()
+        const q = query(
+            collection(db, "items"),
+            where("category", "==", category)
+        );
+        getDocs(q).then((res) => {
+            setLoading(false)
+            if (res.size > 0) {
+                console.log(res.docs.map(doc => ({ "id": doc.id, ...doc.data() })))
+                setproductByCategory(res.docs.map(doc => ({ "id": doc.id, ...doc.data() })))
+            }
+        })
+    }
+    useEffect(() => {
+        if (!category) {
+            getAllProducts()
+        } else {
+            getProductsByCategory()
+        }
+    }, [category])
 
     return (
         <Fragment>

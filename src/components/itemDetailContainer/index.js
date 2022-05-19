@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import React, { useEffect, useState } from 'react';
-import { data } from "../mockdata";
 import ItemDetail from "../itemDetail";
-
 
 const ItemDetailContainer = () => {
     const { productId } = useParams()
@@ -10,29 +9,24 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const [alert, setAlert] = useState(false)
 
-    useEffect(() => {
-        (
-            async () => {
-                const getProduct = await getProducts()
-                if (getProduct) {
-                    setLoading(false)
-                    setProduct(getProduct)
-                } else {
-                    setLoading(false)
-                    setAlert(true)
+    const getProduct = async () => {
+        const db = getFirestore()
+        const productSelected = doc(db, "items", productId)
+        getDoc(productSelected)
+            .then((res) => {
+                setLoading(false)
+                if (res.exists()) {
+                    setProduct(res.data())
                 }
-            }
-        )()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [productId])
-
-    const getProducts = () => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(data.find(r => r.id == productId));
-            }, 2000);
-        });
+            })
+            .catch(() => {
+                setAlert(true)
+            })
     }
+
+    useEffect(() => {
+        getProduct()
+    }, [])
 
     return (
         <>
@@ -52,3 +46,32 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer;
+
+
+
+
+
+    // useEffect(() => {
+    //     (
+    //         async () => {
+    //             const getProduct = await getProducts()
+    //             if (getProduct) {
+    //                 setLoading(false)
+    //                 setProduct(getProduct)
+    //             } else {
+    //                 setLoading(false)
+    //                 setAlert(true)
+    //             }
+    //         }
+    //     )()
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [productId])
+
+    // const getProducts = () => {
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             resolve(getAllproducts.find(r => r.id == productId));
+    //             console.log(productId)
+    //         }, 2000);
+    //     });
+    // }

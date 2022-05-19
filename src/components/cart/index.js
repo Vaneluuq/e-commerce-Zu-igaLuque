@@ -1,9 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CartContainer = () => {
+const Cart = () => {
     return ( 
-        <div>Aqui esta el resumen de mi compra</div>
+        <div>
+            <div>
+                <h4>Bolsa de compras</h4>
+                <p>Tu Bolsa de Compras está vacía. Agrega productos ahora</p>
+                <Link to={"/"}>Ir a comprar</Link>
+            </div>
+        </div>
      );
 }
  
-export default CartContainer;
+export default Cart;
