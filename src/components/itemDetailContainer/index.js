@@ -5,7 +5,7 @@ import ItemDetail from "../itemDetail";
 
 const ItemDetailContainer = () => {
     const { productId } = useParams()
-    const [product, setProduct] = useState()
+    const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
     const [alert, setAlert] = useState(false)
 
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
             .then((res) => {
                 setLoading(false)
                 if (res.exists()) {
-                    setProduct(res.data())
+                    setProduct({ "id": res.id, ...res.data() })
                 }
             })
             .catch(() => {
@@ -46,32 +46,3 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer;
-
-
-
-
-
-    // useEffect(() => {
-    //     (
-    //         async () => {
-    //             const getProduct = await getProducts()
-    //             if (getProduct) {
-    //                 setLoading(false)
-    //                 setProduct(getProduct)
-    //             } else {
-    //                 setLoading(false)
-    //                 setAlert(true)
-    //             }
-    //         }
-    //     )()
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [productId])
-
-    // const getProducts = () => {
-    //     return new Promise((resolve) => {
-    //         setTimeout(() => {
-    //             resolve(getAllproducts.find(r => r.id == productId));
-    //             console.log(productId)
-    //         }, 2000);
-    //     });
-    // }

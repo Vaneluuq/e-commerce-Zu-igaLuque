@@ -7,7 +7,6 @@ const cx = classNames.bind(itemListStyles);
 
 const Item = ({ data }) => {
     const [counter, setCounter] = useState(1)
-
     const { addItem } = useContext(CardContext)
 
     const addToShopping = (item) => {

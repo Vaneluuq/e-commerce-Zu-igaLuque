@@ -8,6 +8,7 @@ const cx = classNames.bind(itemDetails);
 
 const ItemDetail = ({ product }) => {
     const { addItem } = useContext(CardContext)
+    const [goToPay, setGoToPay] = useState(false)
     const [counter, setCounter] = useState(1)
 
     const stylePayment = () => {
@@ -19,8 +20,6 @@ const ItemDetail = ({ product }) => {
             return "containerPaymentOthers"
         }
     }
-
-    const [goToPay, setGoToPay] = useState(false)
 
     const addToShopping = (item) => {
         const data = {

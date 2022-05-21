@@ -36,7 +36,7 @@ const Cart = () => {
                                     <td>{item?.item?.title}</td>
                                     <td>${item?.item?.price}</td>
                                     <td>{item?.quantity}</td>
-                                    <td className="flex items-center justify-around "> ${item?.total}</td>
+                                    <td className="flex items-center justify-around "> ${(item?.total).toFixed(2)}</td>
                                     <td><span className='cursor-pointer' onClick={() => removeItem(item?.item?.id)}><Icon icon="x" width="20" height="20" /></span></td>
                                 </tr>
                             ))}

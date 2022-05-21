@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CardContext } from "../cartContext";
 const cx = classNames.bind(cardStyles);
 
-const CardWidget = ({iconStyle}) => {
+const CardWidget = ({ iconStyle }) => {
     const { items } = useContext(CardContext)
     return (
         <PopoverCart>
