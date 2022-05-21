@@ -13,7 +13,8 @@ const Item = ({ data }) => {
     const addToShopping = (item) => {
         const resumeProduct = {
             item: item,
-            quantity: counter
+            quantity: counter,
+            total: item.price * counter
         }
         addItem(resumeProduct)
     }

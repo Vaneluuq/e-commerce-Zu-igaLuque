@@ -25,7 +25,8 @@ const ItemDetail = ({ product }) => {
     const addToShopping = (item) => {
         const data = {
             item: item,
-            quantity: counter
+            quantity: counter,
+            total: item.price * counter
         }
         addItem(data)
         setGoToPay(true)

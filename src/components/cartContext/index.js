@@ -5,7 +5,8 @@ export const CardContext = createContext({
     items:
         [{
             item: {},
-            quantity: 0
+            quantity: 0, 
+            total: 0
         }],
     addItem: () => { },
     removeItem: () => { },

@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import classNames from "classnames/bind";
 import Icon from "feather-icons-react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import moduleStyles from "./popover.module.css";
 import { CardContext } from '../cartContext';
 const cx = classNames.bind(moduleStyles);
 
 function PopoverCart({ children }) {
     const refContainer = useRef();
+    const navigate = useNavigate();
     const { items, removeItem, clear } = useContext(CardContext)
     const [seeOptions, setseeOptions] = useState(false)
     const onHandleClickAway = (e) => {
@@ -22,14 +23,17 @@ function PopoverCart({ children }) {
         };
     }, []);
 
-    useEffect(() => {
-        setseeOptions(true)
-    }, [items])
-
+    const handleClick = () => {
+        if (items.length > 0) {
+            setseeOptions(!seeOptions)
+        } else {
+            navigate('/cart')
+        }
+    }
 
     return (
         <>
-            <div onClick={() => setseeOptions(!seeOptions)}>
+            <div onClick={handleClick}>
                 {children}
             </div>
             {seeOptions &&
