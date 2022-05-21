@@ -9,7 +9,7 @@ const Cart = () => {
     const totalCart = () => {
         const price = items.map(item => item?.total)
         let total = price.reduce((a, b) => a + b, 0);
-        return total.toFixed(2);
+        return total?.toFixed(2);
     }
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const Cart = () => {
                                     <td>{item?.item?.title}</td>
                                     <td>${item?.item?.price}</td>
                                     <td>{item?.quantity}</td>
-                                    <td className="flex items-center justify-around "> ${(item?.total).toFixed(2)}</td>
+                                    <td className="flex items-center justify-around "> ${(item?.total)?.toFixed(2)}</td>
                                     <td><span className='cursor-pointer' onClick={() => removeItem(item?.item?.id)}><Icon icon="x" width="20" height="20" /></span></td>
                                 </tr>
                             ))}
