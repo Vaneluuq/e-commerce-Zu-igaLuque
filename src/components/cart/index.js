@@ -46,7 +46,7 @@ const Cart = () => {
                         <h2 className='text-xl font-medium mb-2'>Resumen de la compra</h2>
                         <div className='text-xl font-semibold mb-2 text-red-500'>Total: ${totalCart()}</div>
                         <div className='flex flex-col'>
-                            <button className='underline'>Finalizar compra</button>
+                            <Link to={"/order"} className='underline'>Finalizar compra</Link>
                             <Link to={"/"} className='underline'>Seleccionar mas productos</Link>
                         </div>
 

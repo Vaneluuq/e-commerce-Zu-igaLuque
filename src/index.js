@@ -6,17 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBmVnj2GIcr1bsw02Vg08kfZhU3Dlv7Cjk",
-  authDomain: "e-commerce-dulcetarde.firebaseapp.com",
-  projectId: "e-commerce-dulcetarde",
-  storageBucket: "e-commerce-dulcetarde.appspot.com",
-  messagingSenderId: "11003428840",
-  appId: "1:11003428840:web:2dfe03403a3354ce8cae5d"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain:process.env.REACT_APP_AUTHDOMAIN ,
+  projectId: process.env.REACT_APP_PROYECTID ,
+  storageBucket: process.env.REACT_APP_STORAGEBICKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID ,
+  appId: process.env.REACT_APP_APPID
 };
 
 const app = initializeApp(firebaseConfig);
-
-
 
 ReactDOM.render(
   <React.StrictMode>
