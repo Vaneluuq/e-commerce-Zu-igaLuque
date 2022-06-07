@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import classNames from "classnames/bind";
 import Icon from "feather-icons-react";
 import { Link, useNavigate } from 'react-router-dom';
-import moduleStyles from "./popover.module.css";
+import moduleStyles from "./PopoverCart.module.css";
 import { CardContext } from '../cartContext';
 const cx = classNames.bind(moduleStyles);
 
@@ -44,7 +44,7 @@ function PopoverCart({ children }) {
                         <div className={cx("containerProducts")}>
                             {items.map(item => (
                                 <div style={{ backgroundImage: `url(${item?.item?.image})` }} className={cx("border-2 border-slate-500 my-1 bg-no-repeat bg-center bg-cover flex justify-between ", "containerProductsSelected")} key={item?.item?.id}>
-                                    <div className={cx("flex flex-col text-white", "containerDetails")}>
+                                    <div className={cx("flex flex-col text-left text-white", "containerDetails")}>
                                         <span>{item?.item?.title}</span>
                                         <span>Cantidad: {item?.quantity}</span>
                                     </div>

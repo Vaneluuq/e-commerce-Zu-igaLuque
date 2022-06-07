@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import classNames from "classnames/bind";
-import itemListStyles from "./item.module.css";
+import itemListStyles from "./Item.module.css";
 import { Link } from 'react-router-dom';
 import { CardContext } from '../cartContext';
 const cx = classNames.bind(itemListStyles);

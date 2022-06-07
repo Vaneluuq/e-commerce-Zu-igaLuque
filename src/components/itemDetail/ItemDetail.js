@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import classNames from "classnames/bind";
-import itemDetails from "./itemDetails.module.css";
+import itemDetails from "./ItemDetails.module.css";
 import Icon from "feather-icons-react";
 import { Link } from "react-router-dom";
 import { CardContext } from "../cartContext";

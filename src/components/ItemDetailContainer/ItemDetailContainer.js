@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import React, { useEffect, useState } from 'react';
-import ItemDetail from "../itemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import Alert from "../Alert/Alert";
+import Loading from "../Loading/Loading";
 
 const ItemDetailContainer = () => {
     const { productId } = useParams()
@@ -17,6 +19,8 @@ const ItemDetailContainer = () => {
                 setLoading(false)
                 if (res.exists()) {
                     setProduct({ "id": res.id, ...res.data() })
+                } else {
+                    setAlert(true)
                 }
             })
             .catch(() => {
@@ -30,17 +34,17 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {loading ?
-                <div
-                    style={{ height: "100vh" }}
-                    className='flex justify-center items-center text-2xl text-amber-600'>"Loading..."
-                </div>
-                : alert ?
-                    <div
-                        style={{ height: "100vh" }}
-                        className='flex justify-center items-center text-2xl text-amber-600' >Upps! Ha ocurrido un error, recarga la pagina nuevamente.
-                    </div>
-                    : <ItemDetail product={product} />}
+            {
+                loading &&
+                <Loading />
+            }
+            {
+                alert &&
+                <Alert message={"Upps! Se ha presentado un error al procesar la informacion consultada."} />
+            }
+            {(!alert && !loading) &&
+                <ItemDetail product={product} />
+            }
         </>
     );
 }

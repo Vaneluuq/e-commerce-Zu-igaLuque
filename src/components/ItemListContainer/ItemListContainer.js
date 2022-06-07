@@ -1,12 +1,15 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
-import ItemList from '../itemList';
+import ItemList from '../ItemList/ItemList';
+import Loading from '../Loading/Loading';
+import Alert from '../Alert/Alert';
 
 const ItemListContainer = () => {
     const { category = null } = useParams()
     const [productByCategory, setproductByCategory] = useState([])
     const [loading, setLoading] = useState(true)
+    const [alert, setAlert] = useState(false)
 
     const getAllProducts = async () => {
         const db = getFirestore()
@@ -24,13 +27,15 @@ const ItemListContainer = () => {
             collection(db, "items"),
             where("category", "==", category)
         );
-        getDocs(q).then((res) => {
-            setLoading(false)
-            if (res.size > 0) {
-                console.log(res.docs.map(doc => ({ "id": doc.id, ...doc.data() })))
-                setproductByCategory(res.docs.map(doc => ({ "id": doc.id, ...doc.data() })))
-            }
-        })
+        getDocs(q)
+            .then((res) => {
+                setLoading(false)
+                if (res.size > 0) {
+                    setproductByCategory(res.docs.map(doc => ({ "id": doc.id, ...doc.data() })))
+                } else {
+                    setAlert(true)
+                }
+            })
     }
     useEffect(() => {
         if (!category) {
@@ -42,9 +47,13 @@ const ItemListContainer = () => {
 
     return (
         <Fragment>
-            {loading ? <div style={{ height: "100vh" }} className='flex justify-center items-center text-2xl text-amber-600' >"loading..."</div> :
+            {loading &&
+                <Loading />}
+            {alert &&
+                <Alert message={"Se ha identificado un error al procesar la solicitud"} />}
+            {(!loading && !alert) &&
                 <ItemList productsCategory={productByCategory} />}
-        </Fragment>
+        </Fragment >
     );
 }
 

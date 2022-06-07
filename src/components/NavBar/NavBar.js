@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Icon from "feather-icons-react";
-import CardWidget from "../CardWidget";
+import CardWidget from '../CardWidget/CardWidget';
 import classNames from "classnames/bind";
-import navStyles from "./navBar.module.css";
+import navStyles from "./NavBar.module.css";
 import logo from "../../assets/logo.png"
 const cx = classNames.bind(navStyles);
 
