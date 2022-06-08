@@ -15,7 +15,7 @@ const customStyles = {
 const ModalEcommerce = ({ children, openModal, modalIsOpen, closeModal }) => {
     return (
         <div>
-            <button onClick={openModal}>Open Modal</button>
+            <button onClick={openModal}>Abrir</button>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
