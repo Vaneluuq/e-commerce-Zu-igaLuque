@@ -1,7 +1,9 @@
 # Tienda virtual DulceTarde
-E-commerce detinado a la denta de distintos productos: ropa, electrodomesticos y joyas.
+
+E-commerce destinado a la venta de distintos productos: ropa, electrodomesticos y joyas.
 
 ## Despliegue 
+
 Se utilizo vercel como plataforma de despliegue. 
 
 [E-commerce DulceTarde](https://e-commerce-zuniga-luque-5l5w3vc3r-vaneluuq.vercel.app/)
@@ -9,7 +11,7 @@ Se utilizo vercel como plataforma de despliegue.
 
 ### Caracteristicas
 
-En el e-commerce DulceTarde se muestran 3 categorias de productos: ropa, electrodomesticos y otros, donde es posible observar todos los elementos, ver los elementos por categoria y ver el detalle de cada item. El carrito de compras se encuntra dispobile al usuario donde podra observar la cantidad de productos agregados, desde alli se le redirige a una vista donde se encuentra el resumen de la compra y el total y finalizar su compra en un form donde agrega sus datos personales y se le muestra el codigo de su compra. 
+En el e-commerce DulceTarde se muestran 3 categorias de productos: ropa, electrodomesticos y otros, donde es posible observar todos los elementos, ver los elementos por categoria y ver el detalle de cada item. El carrito de compras se encuentra disponible al usuario donde puede observar la cantidad de productos agregados, desde alli se le redirige a una vista donde se encuentra el resumen de la compra y el total y finalizar su compra en un form agregando sus datos personales y al finalizar se le retorna el codigo de su compra. 
 
 ### Estructura archivos del proyecto
 
