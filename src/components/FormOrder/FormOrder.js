@@ -1,6 +1,4 @@
 import React, { useContext, useState } from "react";
-import classNames from "classnames/bind";
-import form from "./FormOrder.module.css";
 import { addDoc, collection, getDoc, getFirestore } from "firebase/firestore";
 import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -13,7 +11,6 @@ import TextField from "@mui/material/TextField";
 import ModalEcommerce from "../Modal/Modal";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-const cx = classNames.bind(form);
 
 const Input = ({ formik, id, type, error, value, label }) => {
   return (

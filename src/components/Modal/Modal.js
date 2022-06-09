@@ -15,10 +15,10 @@ const style = {
     p: 4,
   };
 
-const ModalEcommerce = ({ children, openModal, modalIsOpen, closeModal }) => {
+const ModalEcommerce = ({ children, openModal, modalIsOpen, closeModal, buttom }) => {
   return (
     <div>
-      <button onClick={openModal}>Abrir</button>{" "}
+      {buttom && <button onClick={openModal}>Abrir</button>}
       <Modal
         open={modalIsOpen}
         onClose={closeModal}

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Typography from "@mui/material/Typography";
 import { CardContext } from "../cartContext";
+import Button from "@mui/material/Button";
 import Icon from "feather-icons-react";
 import { currencyFormat } from "../../functions/currencyFormat";
 
@@ -70,10 +72,14 @@ const Cart = () => {
         </div>
       ) : (
         <div className="flex flex-col justify-center  ">
-          <h4 className="text-xl font-medium mb-2">Bolsa de compras</h4>
+          <Typography variant="h5" sx={{ color: "info.main", marginY: "10px" }}>
+            Bolsa de compras
+          </Typography>
           <span>Tu Bolsa de Compras está vacía. Agrega productos ahora</span>
-          <Link to={"/"} className="underline">
-            Ir a comprar
+          <Link to={"/"}>
+            <Button type="submit" sx={{ mt: 2 }} variant="outlined">
+              Ir a comprar
+            </Button>
           </Link>
         </div>
       )}
