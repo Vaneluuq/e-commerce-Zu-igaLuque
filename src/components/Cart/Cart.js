@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CardContext } from "../cartContext";
 import Icon from "feather-icons-react";
+import { currencyFormat } from "../../functions/currencyFormat";
 
 const Cart = () => {
   const { items, removeItem } = useContext(CardContext);
@@ -34,11 +35,11 @@ const Cart = () => {
               {items.map((item) => (
                 <tr className="leading-10">
                   <td>{item?.item?.title}</td>
-                  <td>${item?.item?.price}</td>
+                  <td>{currencyFormat(item?.item?.price)}</td>
                   <td>{item?.quantity}</td>
                   <td className="flex items-center justify-around ">
                     {" "}
-                    ${item?.total}
+                    {currencyFormat(item?.total)}
                   </td>
                   <td>
                     <span
@@ -55,7 +56,7 @@ const Cart = () => {
           <div className="bg-teal-100 rounded-md my-7 p-5">
             <h2 className="text-xl font-medium mb-2">Resumen de la compra</h2>
             <div className="text-xl font-semibold mb-2 text-red-500">
-              Total: ${totalCart()}
+              Total: {currencyFormat(totalCart())}
             </div>
             <div className="flex flex-col">
               <Link to={"/order"} className="underline">
